@@ -14,5 +14,5 @@ jobs:
     with:
       working_directory: infrastructure/environments/nonprod
       azure_resource_name: devstream_infra
-      environment: nonprod
+#      environment: nonprod
     secrets: inherit

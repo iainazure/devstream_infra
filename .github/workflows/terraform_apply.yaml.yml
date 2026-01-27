@@ -5,6 +5,12 @@ on:
     branches:
       - main
 
+# TODO: Change to this when proper release workflow is in place
+#on:
+#  release:
+#    types:
+#      - published
+
 jobs:
   apply-nonprod:
     permissions:
@@ -14,5 +20,5 @@ jobs:
     with:
       working_directory: infrastructure/environments/nonprod
       azure_resource_name: devstream_infra
-      environment: nonprod # This links to GitHub Environments for approvals
+#      environment: nonprod # This links to GitHub Environments for approvals
     secrets: inherit
