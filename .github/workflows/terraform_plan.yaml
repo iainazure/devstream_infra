@@ -6,6 +6,10 @@ on:
 
 jobs:
   terraform-plan-nonprod:
+    permissions:
+      id-token: write      # Required for Azure OIDC
+      contents: read       # Required to checkout code
+      pull-requests: write # Required to post the Plan comment
     uses: iainazure/devstream_workflows/.github/workflows/terraform_plan.yaml@v0
     with:
       working_directory: infrastructure/environments/nonprod
