@@ -1,0 +1,15 @@
+name: Deploy Infrastructure
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  apply-nonprod:
+    uses: iainazure/devstream_workflows/.github/workflows/terraform_apply.yaml@v0
+    with:
+      working_directory: infrastructure/environments/nonprod
+      azure_resource_name: devstream_infra
+      environment: nonprod # This links to GitHub Environments for approvals
+    secrets: inherit
