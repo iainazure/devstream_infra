@@ -6,7 +6,7 @@ on:
 
 jobs:
   terraform-plan-nonprod:
-    uses: iainazure/devstream_workflows/.github/workflows/terraform_plan.yaml@v0
+    uses: iainazure/devstream_workflows/.github/workflows/terraform_plan.yaml@v0.0.7
     with:
       working_directory: infrastructure/environments/nonprod
       azure_resource_name: devstream_infra
