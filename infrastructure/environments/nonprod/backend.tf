@@ -20,5 +20,5 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "test_rg" {
   name     = "rg-terraform-test-001"
-  location = "UK South" # Or your preferred region
+  location = "UK South"
 }
