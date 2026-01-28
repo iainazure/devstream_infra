@@ -17,9 +17,10 @@ resource "azurerm_storage_container" "state_container" {
   storage_account_name    = azurerm_storage_account.state_sa.name
 }
 
-resource "azurerm_management_lock" "sa_lock" {
-  name       = "state-storage-lock"
-  scope      = azurerm_storage_account.state_sa.id
-  lock_level = "CanNotDelete"
-  notes      = "Prevent accidental deletion of Terraform state"
-}
+# TODO: reinstate when you are happy with setup
+# resource "azurerm_management_lock" "sa_lock" {
+#   name       = "state-storage-lock"
+#   scope      = azurerm_storage_account.state_sa.id
+#   lock_level = "CanNotDelete"
+#   notes      = "Prevent accidental deletion of Terraform state"
+# }

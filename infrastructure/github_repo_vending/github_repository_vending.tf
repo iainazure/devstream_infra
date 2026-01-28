@@ -30,7 +30,9 @@ resource "github_repository" "project_repo" {
   # --- 5. LIFECYCLE (Safety) ---
   # If you ever delete this repo via Terraform, it will archive it instead of
   # nuking it from orbit. This is a massive life-saver.
-  archive_on_destroy = true
+  # TODO: reinstate when you are happy with setup
+  # archive_on_destroy = true
+  archive_on_destroy = false
 }
 
 # --- 6. BRANCH PROTECTION (The "Non-Negotiables") ---
