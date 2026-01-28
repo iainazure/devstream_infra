@@ -25,3 +25,8 @@ terraform {
 provider "azurerm" {
   features {}
 }
+
+provider "github" {
+  token = var.github_token # This should be linked to a GitHub Secret
+  owner = var.github_org
+}
