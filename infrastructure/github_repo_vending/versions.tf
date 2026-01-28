@@ -1,3 +1,4 @@
+# infrastructure/github_repo_vending/versions.tf
 terraform {
   required_providers {
     azuread = {
@@ -13,15 +14,4 @@ terraform {
       version = "~> 6.0"
     }
   }
-
-  backend "azurerm" {
-    resource_group_name  = "tfstate-nonpord"
-    storage_account_name = "iainazuretfstatenonprod"
-    container_name       = "tfstate"
-    key                  = "terraform.tfstate"
-  }
-}
-
-provider "azurerm" {
-  features {}
 }
