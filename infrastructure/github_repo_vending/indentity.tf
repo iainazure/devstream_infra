@@ -8,7 +8,7 @@ resource "azuread_service_principal" "sp" {
 }
 
 # Federated Trust for Pull Requests (Plan)
-resource "azuread_application_federated_credential" "pr" {
+resource "azuread_application_federated_identity_credential" "pr" {
   application_id = azuread_application.app.id
   display_name   = "github-pr"
   description    = "Allow plan on PRs"
@@ -18,7 +18,7 @@ resource "azuread_application_federated_credential" "pr" {
 }
 
 # Federated Trust for Main (Apply)
-resource "azuread_application_federated_credential" "main" {
+resource "azuread_application_federated_identity_credential" "main" {
   application_id = azuread_application.app.id
   display_name   = "github-main"
   description    = "Allow apply on main branch"
