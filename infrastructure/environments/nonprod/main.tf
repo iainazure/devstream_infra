@@ -1,6 +1,6 @@
 locals {
   projects = {
-    "test-devstream-repo" = { org = "iainazure", loc = "UK South" }
+    "test-devstream-repo" = { org = "iainazure", loc = "UK South" , template_repo = "" }
   }
 }
 
@@ -10,5 +10,5 @@ module "vending_machine" {
   repo_name = "${each.key}-infra"
   github_org         = each.value.org
   location           = each.value.loc
-  template_repo_name = "devstream_infra_template"
+  template_repo_name = each.value.template_repo
 }
